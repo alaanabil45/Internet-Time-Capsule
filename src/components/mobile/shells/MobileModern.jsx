@@ -60,7 +60,7 @@ function MobileModern({ year, icons, wallpaper, time, onOpenApp, onOpenMenu }) {
                 {(dock.length ? dock : icons.slice(0, 4)).map((icon) => (
                     <button key={icon.id} onClick={() => onOpenApp(icon.id)}>
                         <div className="h-12 w-12 overflow-hidden rounded-[15px]">
-                            <img src="/icons/2019/phsettings.jpg" alt="" className="h-full w-full object-cover" draggable="false" />
+                            <img src={icon.image} alt="" className="h-full w-full object-cover" draggable="false" />
                         </div>
                     </button>
                 ))}
