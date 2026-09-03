@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Press+Start+2P&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+body {
+  margin: 0;
+  background: #0b1117;
+  color: #f5f5f5;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* =========================================
+   TIME.OS — CRT EFFECTS
+========================================= */
+
+.crt-screen {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Subtle screen flicker */
+.crt-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 45;
+  background: rgba(255, 255, 255, 0.015);
+  animation: screenFlicker 7s infinite;
+}
+
+/* Fine CRT scanlines */
+.crt-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 46;
+
+  background:
+    repeating-linear-gradient(to bottom,
+      transparent 0px,
+      transparent 2px,
+      rgba(255, 255, 255, 0.025) 3px);
+
+  opacity: 0.7;
+}
+
+@keyframes screenFlicker {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  48% {
+    opacity: 1;
+  }
+
+  49% {
+    opacity: 0.985;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  72% {
+    opacity: 1;
+  }
+
+  73% {
+    opacity: 0.99;
+  }
+
+  74% {
+    opacity: 1;
+  }
+}
+
+/* Moving light reflection */
+.crt-reflection {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 47;
+
+  background: linear-gradient(115deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.018) 48%,
+      transparent 60%);
+
+  transform: translateX(-40%);
+  animation: reflectionMove 14s ease-in-out infinite;
+}
+
+@keyframes reflectionMove {
+  0% {
+    transform: translateX(-45%);
+  }
+
+  50% {
+    transform: translateX(35%);
+  }
+
+  100% {
+    transform: translateX(-45%);
+  }
+}
+
+.crt-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 48;
+  opacity: 0.035;
+  overflow: hidden;
+}
+
+.crt-grain::before,
+.crt-grain::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.8) 0.7px,
+      transparent 0.7px);
+
+  background-size: 4px 4px;
+
+  animation: grainMove 0.18s steps(2) infinite;
+}
+
+.crt-grain::after {
+  animation-duration: 0.25s;
+  opacity: 0.5;
+}
+
+@keyframes grainMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-2%, 1%);
+  }
+
+  50% {
+    transform: translate(1%, -2%);
+  }
+
+  75% {
+    transform: translate(2%, 2%);
+  }
+
+  100% {
+    transform: translate(-1%, -1%);
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+
+  button,
+  a,
+  [data-cursor="interactive"] {
+    cursor: none;
+  }
+}
+
+html,
+body,
+#root {
+  cursor: url("/cursor.svg") 4 2, auto;
+}
+
+button,
+a,
+[role="button"] {
+  cursor: url("/cursor.svg") 4 2, pointer;
+}

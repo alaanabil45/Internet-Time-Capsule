@@ -1,0 +1,16 @@
+TIME.OS MUSIC PACK — ORIGINAL AUDIO ASSETS
+
+These audio tracks and cover artworks were generated specifically for the TIME.OS
+prototype in this conversation. They contain no third-party samples, recordings,
+lyrics, or album artwork.
+
+Files:
+- public/music/2009/*
+- public/music/2012/*
+
+They are intended as original placeholder/production assets for the TIME.OS project.
+If you later replace them with commercial recordings, verify the separate license
+for each recording and cover artwork.
+
+For maximum legal certainty in a commercial product, keep these original assets
+or replace them only with assets whose license explicitly permits your intended use.
