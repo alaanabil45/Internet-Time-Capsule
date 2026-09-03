@@ -8,7 +8,7 @@ import YearSelector from "./components/YearSelector/YearSelector";
 import EnteringYear from "./components/YearSelector/EnteringYear";
 import Desktop from "./components/Desktop/Desktop";
 import useIsMobile from "./hooks/useIsMobile";
-import MobileHome from "./components/Mobile/MobileHome";
+import MobileHome from "./components/mobile/MobileHome";
 import { yearData } from "./data/years/index";
 import { getJamendoTracks } from "./api/jamendo";
 
