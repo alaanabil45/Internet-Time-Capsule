@@ -42,7 +42,7 @@ function MobileModern({ year, icons, wallpaper, time, onOpenApp, onOpenMenu }) {
                     ))}
 
                     <button onClick={onOpenMenu} className="flex flex-col items-center gap-2">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-[18px] bg-white/10 shadow-[0_8px_20px_rgba(0,0,0,0.45)]">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-[18px] overflow-hidden bg-white/10 shadow-[0_8px_20px_rgba(0,0,0,0.45)]">
                             <img src="/icons/2019/phsettings.jpg" alt="Settings" className="h-full w-full object-cover" draggable="false" />
                         </div>
                         <span className="text-[10px] text-white/85">Settings</span>
